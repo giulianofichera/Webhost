@@ -435,86 +435,41 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text-light);
 }
 
-/* Clients Section - Collapsible groups */
+/* Clients Section */
 .clients {
     padding: 100px 0;
     background: white;
 }
 
-.clients-groups {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.2rem;
-}
-
-.client-group {
+.clients-card {
     background: #fff;
     border: 1px solid #ffd7d7;
-    border-radius: 16px;
+    border-radius: 20px;
     box-shadow: 0 8px 24px var(--shadow-dark);
-    overflow: hidden;
-    transition: var(--transition);
+    padding: 2rem 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem 3rem;
 }
 
-.client-group:hover {
-    box-shadow: 0 14px 30px var(--shadow);
-    transform: translateY(-3px);
+.client-entry {
+    border-left: 3px solid var(--primary-color);
+    padding-left: 1rem;
 }
 
-.client-group > summary {
-    list-style: none;
-    cursor: pointer;
-    padding: 1rem 1.25rem;
-    font-weight: 600;
-    color: var(--dark-color);
-    background: linear-gradient(135deg, #fff6f6, #fff);
-    border-bottom: 1px solid transparent;
-    position: relative;
-    padding-right: 3rem;
-}
-
-.client-group > summary::-webkit-details-marker {
-    display: none;
-}
-
-.client-group > summary::after {
-    content: '+';
-    position: absolute;
-    right: 1.1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background: var(--primary-color);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.client-category {
+    font-size: 1rem;
     font-weight: 700;
-    line-height: 1;
+    color: var(--dark-color);
+    margin-bottom: 0.35rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
 }
 
-.client-group[open] > summary {
-    border-bottom-color: #ffe3e3;
-}
-
-.client-group[open] > summary::after {
-    content: '-';
-}
-
-.client-list {
-    margin: 0;
-    padding: 1rem 1.5rem 1.25rem 2.3rem;
-}
-
-.client-list li {
-    color: var(--text-color);
-    margin-bottom: 0.45rem;
-}
-
-.client-list li:last-child {
-    margin-bottom: 0;
+.client-names {
+    color: var(--text-light);
+    font-size: 0.92rem;
+    line-height: 1.6;
 }
 
 .flavors-grid {
@@ -727,9 +682,11 @@ h1, h2, h3, h4, h5, h6 {
     .location-content {
         grid-template-columns: 1fr;
     }
-    
-    .clients-groups {
+
+    .clients-card {
         grid-template-columns: 1fr;
+        padding: 1.5rem;
+        gap: 1.25rem;
     }
 }
 
@@ -861,15 +818,9 @@ h1, h2, h3, h4, h5, h6 {
     .social-links {
         flex-direction: column;
     }
-    
-    .client-group > summary {
-        font-size: 0.95rem;
-        padding: 0.9rem 1rem;
-        padding-right: 2.8rem;
-    }
 
-    .client-list {
-        padding: 0.85rem 1.2rem 1rem 2rem;
+    .clients-card {
+        padding: 1.25rem;
     }
 }
 
